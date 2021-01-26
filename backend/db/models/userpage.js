@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const UserPage = sequelize.define('UserPage', {
-    id: DataTypes.INTEGER,
+    // id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
     article_id: DataTypes.INTEGER
   }, {});

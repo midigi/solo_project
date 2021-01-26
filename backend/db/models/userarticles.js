@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const UserArticles = sequelize.define('UserArticles', {
-    id: DataTypes.INTEGER,
+    // id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
     title: DataTypes.STRING,
     blurb: DataTypes.STRING,
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'user_id'
     }
     UserArticles.belongsToMany(models.User, articleUserMap);
-    UserArticles.hasMany(models.ArticleComment, {foreignKey: article_id});
+    UserArticles.hasMany(models.ArticleComments, {foreignKey: 'article_id'});
   };
   return UserArticles;
 };

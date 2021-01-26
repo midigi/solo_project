@@ -5,8 +5,11 @@ const { setTokenCookie, requireAuth, restoreUser  } = require('../../utils/auth.
 const { User } = require('../../db/models');
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const articleRouter = require('./articles.js');
 
 router.use('/session', sessionRouter);
+
+router.use('/articles', articleRouter);
 
 router.use('/users', usersRouter);
 
