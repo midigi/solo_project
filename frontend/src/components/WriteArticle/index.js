@@ -1,22 +1,25 @@
 import ReactQuill from 'react-quill';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {addArticle} from '../../util/apiUtil';
+import { useHistory } from 'react-router-dom';
 
 const WriteArticle = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [title, setTitle] = useState('');
     const [blurb, setBlurb] = useState('');
     const [text, setText] = useState('');
 
-    const handleTitle = (content) => {
-        setTitle(content);
+    const handleTitle = (e) => {
+        setTitle(e.target.value);
     }
-    const handleBlurb = (content) => {
-        setBlurb(content);
+    const handleBlurb = (e) => {
+        setBlurb(e.target.value);
     }
-    const handleContent = (content) => {
-        setText(content);
+    const handleContent = (e) => {
+        setText(e.target.value);
     }
 
     const handleSubmit = async (e) => {
@@ -27,10 +30,10 @@ const WriteArticle = () => {
             text,
         };
 
-        // const submitArticle = await dispatchEvent(thunkactionhere(payload));
-        // if (submitArticle) {
-        //     hideForm();
-        // }
+        const submitArticle = await dispatch(addArticle(payload));
+        if (submitArticle) {
+            history.push('/');
+        }
     };
 
     return (
@@ -40,19 +43,19 @@ const WriteArticle = () => {
                 <input
                     placeholder="Title"
                     value={title}
-                    onChange={setTitle}
+                    onChange={(e)=>handleTitle(e)}
                 />
                 <input
                     placeholder="Blurb"
                     value={blurb}
-                    onChange={setBlurb}
+                    onChange={(e)=>handleBlurb(e)}
                 />
                 <ReactQuill
                     placeholder="Lorem impsum"
                     value={text}
-                    onChange={handleContent}
+                    onChange={(e)=>handleContent(e)}
                 />
-                <button type="submit">Submit Article</button>
+                <button type="submit" onSubmit={handleSubmit} disabled={!!title && !!blurb && !!text}>Submit Article</button>
             </form>
 
         </div>
