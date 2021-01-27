@@ -46,8 +46,13 @@ function HomePage(){
             </script> */}
 
             {article.length > 1 && (
-                <div>{article[0].content}</div>
-            )}
+                article.map(art =>
+                    <>
+                    <div>{art.title}</div>
+                    <div>{art.blurb}</div>
+                    <div>{art.content}</div>
+                    </>
+            ))}
             {/* articles.map */}
             {/* probably map with separate divs for each article to be displayed
             need div for title, blurb, (image?), (date?)

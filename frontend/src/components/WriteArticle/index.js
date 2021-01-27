@@ -12,11 +12,9 @@ const WriteArticle = () => {
     const handleTitle = (content) => {
         setTitle(content);
     }
-
     const handleBlurb = (content) => {
         setBlurb(content);
     }
-
     const handleContent = (content) => {
         setText(content);
     }
