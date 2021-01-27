@@ -10,24 +10,24 @@ const WriteArticle = () => {
 
     const [title, setTitle] = useState('');
     const [blurb, setBlurb] = useState('');
-    const [text, setText] = useState('');
+    const [content, setContent] = useState('');
 
-    const handleTitle = (e) => {
-        setTitle(e.target.value);
-    }
-    const handleBlurb = (e) => {
-        setBlurb(e.target.value);
-    }
-    const handleContent = (e) => {
-        setText(e.target.value);
-    }
+    // const handleTitle = (e) => {
+    //     setTitle(e.target.value);
+    // }
+    // const handleBlurb = (e) => {
+    //     setBlurb(e.target.value);
+    // }
+    // const handleContent = (e) => {
+    //     setText(e.target.value);
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
             title,
             blurb,
-            text,
+            content,
         };
 
         const submitArticle = await dispatch(addArticle(payload));
@@ -43,19 +43,19 @@ const WriteArticle = () => {
                 <input
                     placeholder="Title"
                     value={title}
-                    onChange={(e)=>handleTitle(e)}
+                    onChange={(e)=>setTitle(e.target.value)}
                 />
                 <input
                     placeholder="Blurb"
                     value={blurb}
-                    onChange={(e)=>handleBlurb(e)}
+                    onChange={(e)=>setBlurb(e.target.value)}
                 />
                 <ReactQuill
                     placeholder="Lorem impsum"
-                    value={text}
-                    onChange={(e)=>handleContent(e)}
+                    value={content}
+                    onChange={(value)=>setContent(value)}
                 />
-                <button type="submit" onSubmit={handleSubmit} disabled={!!title && !!blurb && !!text}>Submit Article</button>
+                <button type="submit" disabled={!title && !blurb && !content}>Submit Article</button>
             </form>
 
         </div>

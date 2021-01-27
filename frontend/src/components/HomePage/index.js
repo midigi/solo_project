@@ -2,9 +2,11 @@ import './HomePage.css';
 import {useEffect, useState, React} from 'react';
 import {fetchAllArticles} from '../../util/apiUtil';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetch} from '../../store/csrf'
+import {fetch} from '../../store/csrf';
+import parser from 'react-html-parser';
 
 function HomePage(){
+    // const parser = new DOMParser();
     const [article, setArticle] = useState([]);
     // console.log('useselector', useSelector(state));
     // const stateArticles = useSelector(state=>state.articles);
@@ -47,11 +49,11 @@ function HomePage(){
 
             {article.length > 1 && (
                 article.map(art =>
-                    <>
-                    <div>{art.title}</div>
-                    <div>{art.blurb}</div>
-                    <div>{art.content}</div>
-                    </>
+                    <div key={art.id}>
+                        <div>{art.title}</div>
+                        <div>{art.blurb}</div>
+                        <div>{parser(art.content)}</div>
+                    </div>
             ))}
             {/* articles.map */}
             {/* probably map with separate divs for each article to be displayed

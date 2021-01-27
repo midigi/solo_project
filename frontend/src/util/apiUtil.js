@@ -9,9 +9,13 @@ import {articleAdded, receiveArticles} from '../store/reducers/articles'
 //     return articles;
 // }
 
-export const addArticle = () => async (dispatch) => {
-    const res = await fetch('/api/createArticle')
+export const addArticle = (payload) => async (dispatch) => {
+    const res = await fetch('/api/articles', {
+        method: "POST",
+        body: JSON.stringify(payload)
+    })
     if (!res.ok) throw res;
     const { article } = await res.data
     dispatch(articleAdded(article))
+    return article;
 }
