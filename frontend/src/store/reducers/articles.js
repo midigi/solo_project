@@ -15,19 +15,20 @@ export const viewArticle = (article) => {
 const initialState=[]
 export const articleReducer = (state={}, action) => {
     let newState = Object.assign({}, state)
+    let nextState={};
     switch(action.type) {
         case 'ADD_ARTICLE':
             return Object.assign(newState, {
                 [action.article.id]: action.article,
             });
         case 'RECEIVE_ARTICLE':
-            let nextState={}
+            // let nextState={};
             action.articles.forEach((article) => (nextState[article.id] = article))
             return Object.assign(newState, nextState)
         case 'VIEW_ARTICLE':
-            let newState;
-            action.articles.forEach((article) => (nextState[article.id] = article))
-            return Object.assign(newState, nextState)
+            // let nextState={};
+            newState[action.article.id] = action.article;
+            return newState;
         default:
             return state
 

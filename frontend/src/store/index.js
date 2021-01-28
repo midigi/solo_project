@@ -5,7 +5,7 @@ import {articleReducer} from './reducers/articles'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  article: articleReducer
+  articles: articleReducer
 });
 
 let enhancer;

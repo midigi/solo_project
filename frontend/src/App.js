@@ -33,7 +33,7 @@ function App() {
           <Route path="/writeArticle">
             <WriteArticle />
           </Route>
-          <Route path='/article/:articleId'>
+          <Route path='/articles/:article_id'>
             <ViewArticle />
           </Route>
         </Switch>
