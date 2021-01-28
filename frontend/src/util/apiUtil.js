@@ -1,5 +1,5 @@
 import {fetch} from '../store/csrf';
-import {articleAdded, receiveArticles} from '../store/reducers/articles'
+import {articleAdded, receiveArticles, viewArticle} from '../store/reducers/articles'
 
 // export const fetchAllArticles = () => async (dispatch) => {
 //     const res = await fetch('/api/articles');
@@ -8,6 +8,15 @@ import {articleAdded, receiveArticles} from '../store/reducers/articles'
 //     // console.log("this is the articles", articles);
 //     return articles;
 // }
+
+export const fetchArticle = () => async (dispatch) => {
+    const res = await fetch('/api/articles/:id');
+    if (!res.ok) throw res;
+    const {article} = await res.data;
+    dispatch(viewArticle(article))
+    // console.log("this is the articles", articles);
+    return article;
+}
 
 export const addArticle = (payload) => async (dispatch) => {
     const res = await fetch('/api/articles', {

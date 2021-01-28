@@ -6,7 +6,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage/index";
-import WriteArticle from "./components/WriteArticle/index"
+import WriteArticle from "./components/WriteArticle/index";
+import ViewArticle from "./components/ViewArticle/index";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/writeArticle">
             <WriteArticle />
+          </Route>
+          <Route path='/article/:articleId'>
+            <ViewArticle />
           </Route>
         </Switch>
       )}
