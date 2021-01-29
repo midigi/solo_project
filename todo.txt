@@ -1,0 +1,8 @@
+css styling of everything
+login page
+assigning comments to each article
+support writing comments on an article - frontend
+support writing comments on an article - backend
+images?
+graphs?
+search bar/article.content search

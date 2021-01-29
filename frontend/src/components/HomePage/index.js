@@ -32,31 +32,43 @@ function HomePage(){
         getArticles()
     },[]);
 
+    function sortArticles({updatedAt: a1}, {updatedAt: a2}) {
+        const d1 = new Date(a1);
+        const d2 = new Date(a2);
+        return d2.getTime() - d1.getTime();
+    }
+
+    article.sort(sortArticles)
+
+    function renderArticle(a) {
+        return (
+                <div className="article" key={a.id}>
+                    <p>{(new Date(a.updatedAt)).toLocaleDateString()}</p>
+                    <div>{a.title}</div>
+                    <div>{a.blurb}</div>
+                    <div>{parser(a.content)}</div>
+                </div>
+            // <a href={`/articles/${a.id}`}>
+            // </a>
+        )
+    }
+
     return (
         <div className='homepagebody'>
             <div className='header'>Medium - Analytics</div>
-            <div className='header'>Highlighted Article
-                <div>Image goes here</div>
-                <div>Title of highlighted article goes here</div>
-                <div>Blurb-quick description</div>
-            </div>
-            <div>Article Feed</div>
-            {/* <script>
-                for (const obj in object){
-                    console.log(obj.title)
+            {
+                article && article.length > 0 &&
+                <div className='main-article'>Highlighted Article
+                    {renderArticle(article[0])}
+                </div>
             }
-            </script> */}
 
             {article.length > 1 && (
-                article.map(art =>
-                    <a href={`/articles/${art.id}`}>
-                        <div key={art.id}>
-                            <div>{art.title}</div>
-                            <div>{art.blurb}</div>
-                            <div>{parser(art.content)}</div>
-                        </div>
-                    </a>
-            ))}
+                <div className="article-feed">
+                    <div>Article Feed</div>
+                    {article.slice(1).map(art => renderArticle(art))}
+                </div>
+            )}
             {/* articles.map */}
             {/* probably map with separate divs for each article to be displayed
             need div for title, blurb, (image?), (date?)

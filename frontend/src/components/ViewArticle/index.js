@@ -31,6 +31,7 @@ const ViewArticle = () => {
     //     history.push('/');
     // }
 
+
     return (
         <>
             <div>

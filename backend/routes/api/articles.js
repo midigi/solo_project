@@ -12,12 +12,10 @@ router.get('/', asyncHandler(async (req, res)=>{
 router.get(`/:id(\\d+)`, asyncHandler(async (req, res)=>{
     const id = Number.parseInt(req.params.id);
     const article = await UserArticles.findOne({where: id});
-    console.log('this is the article', article)
     return res.json({article});
 }))
 
 router.post('/', requireAuth, asyncHandler(async (req, res) => {
-    console.log("this is the req body!!!!!", req.body)
     const article = await UserArticles.build({
         user_id: req.user.id,
         title: req.body.title,

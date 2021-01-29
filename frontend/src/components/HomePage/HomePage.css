@@ -1,3 +1,35 @@
 /* .header {
   font-size: 3em;
 } */
+
+.homepagebody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title title title"
+    "hilite hilite feed feed";
+  gap: 10px;
+}
+.header {
+  grid-area: title;
+}
+
+.main-article {
+  grid-area: hilite;
+}
+
+.article-feed {
+  grid-area: feed;
+}
+
+.article {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 10px 5px 5px gainsboro;
+}
+
+.main-article .article {
+  height: 100%;
+}

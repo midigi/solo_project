@@ -1,0 +1,14 @@
+.dropdown-container {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  border: 1px solid gainsboro;
+  box-shadow: 10px 5px 5px gainsboro;
+  margin-top: 8px;
+  margin-right: 5px;
+  background: white;
+}
+.profile-dropdown {
+  padding: 5px;
+  margin: 0;
+}
