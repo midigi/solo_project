@@ -43,9 +43,9 @@ function HomePage(){
     function renderArticle(a) {
         return (
                 <div className="article" key={a.id}>
-                    <p>{(new Date(a.updatedAt)).toLocaleDateString()}</p>
-                    <div>{a.title}</div>
+                    <div className="title">{a.title}</div>
                     <div>{a.blurb}</div>
+                    <div>{(new Date(a.updatedAt)).toLocaleDateString()}</div>
                     <div>{parser(a.content)}</div>
                 </div>
             // <a href={`/articles/${a.id}`}>
@@ -55,17 +55,18 @@ function HomePage(){
 
     return (
         <div className='homepagebody'>
-            <div className='header'>Medium - Analytics</div>
             {
                 article && article.length > 0 &&
-                <div className='main-article'>Highlighted Article
-                    {renderArticle(article[0])}
-                </div>
+                    <div className='main-article'>
+                        <div className='header2'>Highlighted Article</div>
+                        {renderArticle(article[0])}
+                    </div>
+
             }
 
             {article.length > 1 && (
                 <div className="article-feed">
-                    <div>Article Feed</div>
+                    <div className='header2'>Article Feed</div>
                     {article.slice(1).map(art => renderArticle(art))}
                 </div>
             )}

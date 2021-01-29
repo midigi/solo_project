@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserPage.associate = function(models) {
     UserPage.belongsTo(models.User, { foreignKey: 'user_id' })
+    UserPage.belongsTo(models.UserArticles, { foreignKey: 'article_id' })
   };
   return UserPage;
 };

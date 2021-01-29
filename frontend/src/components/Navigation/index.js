@@ -25,9 +25,18 @@ function Navigation({ isLoaded }){
 
   return (
     <nav>
+
       <ul>
         <li>
-          <NavLink exact to="/">Home</NavLink>
+          <i className="fas fa-chart-line" />
+          <NavLink exact to="/" className='header'>Medium - Analytics</NavLink>
+        </li>
+        <li>
+          <i className="fas fa-pen-nib" />
+          <NavLink exact to="/writeArticle">Write Article</NavLink>
+        </li>
+        <li className="searchbar">
+          <i className="fas fa-search" />
         </li>
       </ul>
       {isLoaded && sessionLinks}

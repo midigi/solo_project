@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage/index";
 import WriteArticle from "./components/WriteArticle/index";
 import ViewArticle from "./components/ViewArticle/index";
+import NotFound from "./components/NotFound/index";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path='/articles/:article_id'>
             <ViewArticle />
+          </Route>
+          <Route path="/*">
+            <NotFound />
           </Route>
         </Switch>
       )}

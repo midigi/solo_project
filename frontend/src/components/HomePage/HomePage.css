@@ -12,6 +12,14 @@
 }
 .header {
   grid-area: title;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header2 {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-article {
@@ -28,8 +36,16 @@
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 10px 5px 5px gainsboro;
+  height: 100px;
+  overflow: hidden;
 }
 
 .main-article .article {
   height: 100%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
 }

@@ -42,14 +42,15 @@ const ViewArticle = () => {
                         <div>{article.title}</div>
                         <div>{article.blurb}</div>
                         <div>{article.content}</div>
+                        <div>Written by: {article.username}</div>
                     </div>
                 ))}
-                {sessionSelector &&
+                {/* {sessionSelector &&
                     sessionSelector.map(session => (
                         <div key={session.id}>
                             <div>Written by: {session.username}</div>
                         </div>
-                    ))}
+                    ))} */}
                 {/* <form>
                     <UserComments />
                 </form> */}
