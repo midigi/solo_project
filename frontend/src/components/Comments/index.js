@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import getAllComments from '../../store/comments'
+import {getAllComments} from '../../store/comments';
 
 function Comments(){
     const dispatch = useDispatch()
@@ -9,15 +9,17 @@ function Comments(){
 
     useEffect(()=> {
         dispatch(getAllComments())
-    },[])
+    },[dispatch])
 
     return (
         <>
-        <div>Hey</div>
-        {
-            comments.map(comment => (comment.content))
+        <div>hey</div>
+        {comments && comments.map(comment =>
+        <div key={comment.id}>
+            <div>{comment.content}</div>
+            <div>Written by:{comment.user_id}</div>
+        </div>)
         }
-
         </>
     )
 }

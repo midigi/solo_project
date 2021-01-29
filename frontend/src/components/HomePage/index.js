@@ -49,11 +49,13 @@ function HomePage(){
 
             {article.length > 1 && (
                 article.map(art =>
-                    <div key={art.id}>
-                        <div>{art.title}</div>
-                        <div>{art.blurb}</div>
-                        <div>{parser(art.content)}</div>
-                    </div>
+                    <a href={`/articles/${art.id}`}>
+                        <div key={art.id}>
+                            <div>{art.title}</div>
+                            <div>{art.blurb}</div>
+                            <div>{parser(art.content)}</div>
+                        </div>
+                    </a>
             ))}
             {/* articles.map */}
             {/* probably map with separate divs for each article to be displayed
