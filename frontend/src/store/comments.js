@@ -9,43 +9,41 @@ const setComments = (comments) => ({
     comments: comments
 });
 
-const addComments = (comments) => ({type: ADD_COMMENTS, comments})
+const addComments = (comments) => ({type: ADD_COMMENTS, comments: comments})
 
-export const getAllComments = () => async (dispatch) => {
-    const res = await fetch('/api/comments');
+export const getAllComments = (article_id) => async (dispatch) => {
+    const res = await fetch(`/api/comments/${article_id}`);
     if (!res.ok) throw res;
     const {comments} = await res.data;
-    console.log('this is comments!!!!!!!', comments)
     dispatch(setComments(comments))
     return comments;
 }
 
-// export const writeComment = (payload) => async (dispatch) => {
-//     const res = await fetch(`/api/comments/`, {
-//         method: 'post',
-//         headers: {
-//           'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(payload)
-//     })
-//     if (res.ok){
-//         const {comment} = await res.data;
-//         dispatch(addComments(comment))
-//         return comment;
-//     }
-// };
+export const writeComment = (payload) => async (dispatch) => {
+    const res = await fetch("/api/comments", {
+        method: 'POST',
+        // headers: {
+        //   'Content-Type': 'application/json',
+    // },
+        body: JSON.stringify(payload)
+    })
+    if (res.ok){
+        const {comments} = await res.data;
+        dispatch(addComments(comments))
+        return comments;
+    }
+};
 
 function commentReducer(state = {}, action) {
     let newState = Object.assign({}, state)
     switch(action.type) {
         case SET_COMMENTS:
-            // newState[action.comments.id] = action.comments;
             action.comments.forEach(comment=>
                 newState[comment.id]=comment)
             return newState;
         case ADD_COMMENTS:
             return Object.assign(newState, {
-                [action.comment.id]: action.comment,
+                [action.comments.id]: action.comments,
             });
         default:
             return state;

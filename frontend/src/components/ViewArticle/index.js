@@ -5,6 +5,8 @@ import { useHistory, useParams } from 'react-router-dom';
 import {fetchArticle} from '../../util/apiUtil';
 import Comments from '../../components/Comments/index';
 import parser from 'react-html-parser';
+import WriteComments from '../../components/WriteComments/index';
+
 
 const ViewArticle = () => {
     const article_id = Number.parseInt(useParams().article_id);
@@ -57,6 +59,7 @@ const ViewArticle = () => {
                 </form> */}
                 <button >Icon for comments</button>
                 <Comments />
+                <WriteComments/>
             </div>
         </>
 

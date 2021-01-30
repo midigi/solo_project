@@ -5,7 +5,7 @@ import {getAllComments} from '../../store/comments';
 function Comments(){
     const dispatch = useDispatch()
     const comments = useSelector((state) => Object.values(state.comments));
-    console.log('comments', comments)
+    // console.log('comments', comments)
 
     useEffect(()=> {
         dispatch(getAllComments())
