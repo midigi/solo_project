@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 // import {addArticle} from '../../util/apiUtil';
 import { useHistory, useParams } from 'react-router-dom';
-import {fetchArticle} from '../../util/apiUtil'
-import Comments from '../../components/Comments/index'
+import {fetchArticle} from '../../util/apiUtil';
+import Comments from '../../components/Comments/index';
+import parser from 'react-html-parser';
 
 const ViewArticle = () => {
     const article_id = Number.parseInt(useParams().article_id);
@@ -41,7 +42,7 @@ const ViewArticle = () => {
                     <div key={article.id}>
                         <div>{article.title}</div>
                         <div>{article.blurb}</div>
-                        <div>{article.content}</div>
+                        <div>{parser(article.content)}</div>
                         <div>Written by: {article.username}</div>
                     </div>
                 ))}

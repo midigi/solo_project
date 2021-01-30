@@ -29,11 +29,11 @@ function Navigation({ isLoaded }){
       <ul>
         <li>
           <i className="fas fa-chart-line" />
-          <NavLink exact to="/" className='header'>Medium - Analytics</NavLink>
+          <NavLink exact to="/" className='header'><span className='smolMode'>Medium - Analytics</span></NavLink>
         </li>
         <li>
           <i className="fas fa-pen-nib" />
-          <NavLink exact to="/writeArticle">Write Article</NavLink>
+          <NavLink exact to="/writeArticle"><span className='smolMode'>Write Article</span></NavLink>
         </li>
         <li className="searchbar">
           <i className="fas fa-search" />

@@ -5,6 +5,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* position: fixed; */
+  /* top: 0;
+  z-index: 3;
+  background-color: white;
+  width: 100vw - 1px; */
   /* background-color: #ffc017; */
 }
 ul {
@@ -38,6 +43,14 @@ li:hover {
   /* rgba(119, 104, 104, 0.8553); */
 }
 
+.blurb {
+  color: rgb(91, 89, 89);
+  font-style: italic;
+}
+.date {
+  color: gray;
+  font-size: small;
+}
 .logout-links {
   display: flex;
 }
@@ -55,4 +68,10 @@ li:hover {
   border-radius: 6px;
   font-family: Arial;
   padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .smolMode {
+    display: none;
+  }
 }

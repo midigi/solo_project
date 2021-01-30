@@ -43,13 +43,14 @@ function HomePage(){
     function renderArticle(a) {
         return (
                 <div className="article" key={a.id}>
-                    <div className="title">{a.title}</div>
-                    <div>{a.blurb}</div>
-                    <div>{(new Date(a.updatedAt)).toLocaleDateString()}</div>
-                    <div>{parser(a.content)}</div>
+                    <a href={`/articles/${a.id}`}>
+                        <div className="title">{a.title}</div>
+                        <div className="blurb">{a.blurb}</div>
+                        <div className="date">{(new Date(a.updatedAt)).toLocaleDateString()}</div>
+                        <div>{parser(a.content)}</div>
+                    </a>
                 </div>
-            // <a href={`/articles/${a.id}`}>
-            // </a>
+
         )
     }
 

@@ -20,6 +20,8 @@
   font-family: Arial, Helvetica, sans-serif;
   justify-content: center;
   align-items: center;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
 .main-article {
@@ -33,11 +35,19 @@
 .article {
   padding: 10px;
   margin-top: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 7px;
-  box-shadow: 10px 5px 5px gainsboro;
+  box-shadow: 1px 1px 1px gainsboro;
   height: 100px;
   overflow: hidden;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.article:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 3px 3px 8px 0px #ffc017;
+  /* rgba(119, 104, 104, 0.8553); */
 }
 
 .main-article .article {
@@ -48,4 +58,11 @@
   font-weight: bold;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+  margin: 1px;
 }
