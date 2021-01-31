@@ -3,6 +3,7 @@ login page
 username on comments
 darkmode
 
+linear gradient on article
 images?
 graphs?
 search bar/article.content search

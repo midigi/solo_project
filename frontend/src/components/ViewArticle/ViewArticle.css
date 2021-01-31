@@ -1,0 +1,26 @@
+.article-container {
+  padding-left: 7em;
+  padding-right: 7em;
+  padding-top: 3em;
+  background-clip: content-box;
+  box-shadow: inset 0 0 0 15px #ffc017;
+}
+
+.spacing {
+  height: 100px;
+}
+
+.comments-container {
+  max-height: 0;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
+}
+
+.hidden {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+
+.button {
+  margin-top: 20px;
+}

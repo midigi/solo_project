@@ -26,7 +26,7 @@ function Navigation({ isLoaded }){
   return (
     <nav>
 
-      <ul>
+      <ul className='nav'>
         <li>
           <i className="fas fa-chart-line" />
           <NavLink exact to="/" className='header'><span className='smolMode'>Medium - Analytics</span></NavLink>
@@ -35,10 +35,10 @@ function Navigation({ isLoaded }){
           <i className="fas fa-pen-nib" />
           <NavLink exact to="/writeArticle"><span className='smolMode'>Write Article</span></NavLink>
         </li>
-        <li className="searchbar">
-          <i className="fas fa-search" />
-        </li>
       </ul>
+      <li className="searchbar">
+          <i className="fas fa-search" />
+      </li>
       {isLoaded && sessionLinks}
     </nav>
   );

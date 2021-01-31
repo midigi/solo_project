@@ -55,7 +55,7 @@
 
 .article:hover {
   background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 3px 3px 8px 0px #ffc017;
+  box-shadow: 3px 3px 8px 0px blue;
   /* rgba(119, 104, 104, 0.8553); */
 }
 

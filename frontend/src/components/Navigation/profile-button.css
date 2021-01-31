@@ -8,8 +8,13 @@
   margin-right: 5px;
   background: white;
   border-radius: 7px;
+  display: block;
 }
 .profile-dropdown {
-  padding: 5px;
-  margin: 0;
+  padding: 10px;
+  margin: 1px;
+  justify-content: right;
+  align-items: center;
+  width: 12em;
+  display: block;
 }

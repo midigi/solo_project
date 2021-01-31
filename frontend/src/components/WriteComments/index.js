@@ -1,21 +1,16 @@
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {writeComment, getAllComments} from '../../store/comments';
-import ReactQuill from 'react-quill';
-import { useHistory, useParams } from 'react-router-dom';
+import {writeComment } from '../../store/comments';
+import { useParams } from 'react-router-dom';
+import './WriteComments.css';
 
 
 function WriteComments(){
     const dispatch = useDispatch()
-    // const writeComment = useSelector((state) => Object.values(state.comments));
+
     const article_id = Number.parseInt(useParams().article_id);
     const user_id = useSelector((state) => (state.session.user.id));
     const [content, setContent] = useState('');
-    // console.log('comments', comments)
-
-    useEffect(()=> {
-        dispatch(getAllComments(article_id))
-    },[dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,12 +28,12 @@ function WriteComments(){
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-                <input
+        <form className="comments" onSubmit={handleSubmit}>
+                <textarea
                     value={content}
                     onChange={(e)=>setContent(e.target.value)}
                 />
-                <button type="submit" disabled={!content}>Submit Comment</button>
+                <button className="button" type="submit" disabled={!content}>Submit Comment</button>
         </form>
     )
 }

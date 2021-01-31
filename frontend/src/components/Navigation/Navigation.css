@@ -13,7 +13,7 @@ nav {
   /* background-color: #ffc017; */
 }
 ul {
-  width: 45em;
+  /* width: 45em; */
   padding-inline-start: 0px;
 }
 
@@ -39,8 +39,15 @@ ul > li a:visited {
 
 li:hover {
   background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 3px 3px 8px 0px #ffc017;
+  box-shadow: 3px 3px 8px 0px blue;
   /* rgba(119, 104, 104, 0.8553); */
+}
+.fas {
+  font-size: 18px;
+}
+
+.nav {
+  margin: 20px;
 }
 
 .blurb {
@@ -68,6 +75,11 @@ li:hover {
   border-radius: 6px;
   font-family: Arial;
   padding-left: 8px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  list-style: none;
 }
 
 .smolMode {
@@ -75,8 +87,12 @@ li:hover {
   padding-right: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .smolMode {
     display: none;
+  }
+  .fas {
+    font-size: 30px;
+    padding: 0px 14px 0px;
   }
 }
