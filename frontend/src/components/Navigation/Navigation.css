@@ -70,6 +70,11 @@ li:hover {
   padding-left: 8px;
 }
 
+.smolMode {
+  border-right: 1px solid gainsboro;
+  padding-right: 15px;
+}
+
 @media (max-width: 768px) {
   .smolMode {
     display: none;

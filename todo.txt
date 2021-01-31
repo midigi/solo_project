@@ -1,10 +1,6 @@
 css styling of everything
 login page
-assigning comments to each article
 username on comments
-support writing comments on an article - frontend
-support writing comments on an article - backend
-article written by- current user--not the stored username. Need to fix
 darkmode
 
 images?

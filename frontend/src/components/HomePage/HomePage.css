@@ -7,7 +7,8 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "title title title title"
-    "hilite hilite feed feed";
+    "hilite hilite feed feed"
+    "trending trending trending trending";
   gap: 10px;
 }
 .header {
@@ -28,20 +29,28 @@
   grid-area: hilite;
 }
 
+.trending {
+  grid-area: trending;
+  border-top: 1px solid gainsboro;
+  padding: 1em;
+}
+
 .article-feed {
   grid-area: feed;
+  border-left: 1px solid gainsboro;
+  margin: 3px;
 }
 
 .article {
   padding: 10px;
   margin-top: 10px;
-  /* border: 1px solid black; */
-  border-radius: 7px;
-  box-shadow: 1px 1px 1px gainsboro;
   height: 100px;
   overflow: hidden;
   margin-right: 1em;
   margin-left: 1em;
+  /* border: 1px solid black; */
+  /* border-radius: 7px; */
+  /* box-shadow: 1px 1px 1px gainsboro; */
 }
 
 .article:hover {
@@ -51,7 +60,7 @@
 }
 
 .main-article .article {
-  height: 100%;
+  height: 87%;
 }
 
 .title {

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {addArticle} from '../../util/apiUtil';
 import { useHistory } from 'react-router-dom';
+import './WriteArticle.css';
 
 const WriteArticle = () => {
     const dispatch = useDispatch();
@@ -37,8 +38,8 @@ const WriteArticle = () => {
     };
 
     return (
-        <div>
-            <p>Write your article here!</p>
+        <div className='writerContainer'>
+            <p className='header'>Write your article here!</p>
             <form onSubmit={handleSubmit}>
                 <input
                     placeholder="Title"
@@ -55,7 +56,7 @@ const WriteArticle = () => {
                     value={content}
                     onChange={(value)=>setContent(value)}
                 />
-                <button type="submit" disabled={!title && !blurb && !content}>Submit Article</button>
+                <button className="button" type="submit" disabled={!title && !blurb && !content}>Submit Article</button>
             </form>
 
         </div>

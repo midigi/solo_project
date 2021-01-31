@@ -64,20 +64,19 @@ function HomePage(){
                     </div>
 
             }
-
             {article.length > 1 && (
                 <div className="article-feed">
                     <div className='header2'>Article Feed</div>
-                    {article.slice(1).map(art => renderArticle(art))}
+                    {article.slice(1, 4).map(art => renderArticle(art))}
                 </div>
             )}
-            {/* articles.map */}
-            {/* probably map with separate divs for each article to be displayed
-            need div for title, blurb, (image?), (date?)
-            */}
-
+            {article.length > 1 && (
+                <div className="trending">
+                    <div className='header2'>Trending Now</div>
+                    {article.slice(4).map(art => renderArticle(art))}
+                </div>
+            )}
         </div>
-    )
-}
+    )}
 
 export default HomePage;
