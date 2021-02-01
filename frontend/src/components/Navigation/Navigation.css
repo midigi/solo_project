@@ -5,6 +5,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 20px;
   /* position: fixed; */
   /* top: 0;
   z-index: 3;
@@ -44,6 +45,7 @@ li:hover {
 }
 .fas {
   font-size: 18px;
+  padding-left: 8px;
 }
 
 .nav {
@@ -67,7 +69,6 @@ li:hover {
 
 .searchbar {
   height: 40px;
-  /* padding-left: 40px; */
   border-style: solid;
   border-width: 1px;
   border-color: rgba(144, 144, 148, 0.5);
@@ -81,18 +82,24 @@ li:hover {
   flex-grow: 1;
   list-style: none;
 }
+.fa-user-circle {
+  padding-left: 0px;
+}
 
 .smolMode {
   border-right: 1px solid gainsboro;
-  padding-right: 15px;
+  padding-left: 6px;
+  padding-right: 12px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .smolMode {
     display: none;
   }
   .fas {
-    font-size: 30px;
+    font-size: 26px;
     padding: 0px 14px 0px;
   }
 }
