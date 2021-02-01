@@ -20,7 +20,7 @@ function Comments(){
             {comments.map(comment =>
             <div key={comment.id}>
                 <div>{comment.content}</div>
-                <div>Written by:{comment.user_id}</div>
+                {/* <div>Written by:{comment.user_id}</div> */}
             </div>)}
         </div>
         }

@@ -75,7 +75,7 @@ const ViewArticle = () => {
                         <div className='header'>{article.title}</div>
                         <div className='blurb'>{article.blurb}</div>
                         <div>{parser(article.content)}</div>
-                        <div>Written by: {article.username}</div>
+                        {/* <div>Written by: {article.username}</div> */}
                     </div>
                 ))}
 
