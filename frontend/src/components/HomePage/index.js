@@ -6,11 +6,9 @@ import {fetch} from '../../store/csrf';
 import parser from 'react-html-parser';
 
 function HomePage(){
-    // const parser = new DOMParser();
     const [article, setArticle] = useState([]);
-    // console.log('useselector', useSelector(state));
-    // const stateArticles = useSelector(state=>state.articles);
-    // console.log('what is this', stateArticles)
+
+
     async function getArticles(){
         const res = await fetch('/api/articles');
         if (!res.ok) throw res;
@@ -18,16 +16,8 @@ function HomePage(){
         setArticle(articles);
     }
 
-    // useSelector....
     const dispatch = useDispatch();
-    // useEffect( () => {
-    //     const fetchArticles = async ()=>{
-    //         dispatch(await fetchAllArticles());
-    //     }
-    //     const result = fetchArticles();
-    //     setArticle([...article, result]);
 
-    // },[]);
     useEffect( () => {
         getArticles()
     },[]);
@@ -56,6 +46,7 @@ function HomePage(){
 
     return (
         <div className='homepagebody'>
+            {/* {('dark mode is', darkMode ? 'on' : 'off')} */}
             {
                 article && article.length > 0 &&
                     <div className='main-article'>

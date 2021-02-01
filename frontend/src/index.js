@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -17,10 +18,19 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 function Root() {
+  const [darkMode, setDarkMode] = useState(false)
+  useEffect(() => {
+      document.addEventListener('toggleDarkMode', (e) => {
+          setDarkMode(e.detail)
+      })
+  }, [])
+
   return (
     <ReduxProvider store={store}>
       <BrowserRouter>
-        <App />
+        <div className={darkMode ? 'darkMode' : ''}>
+          <App />
+        </div>
       </BrowserRouter>
     </ReduxProvider>
   );

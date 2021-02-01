@@ -18,3 +18,8 @@
   width: 12em;
   display: block;
 }
+
+ul > li:hover {
+  background-color: none;
+  box-shadow: none;
+}

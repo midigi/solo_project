@@ -6,11 +6,18 @@ import './profile-button.css'
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
+  const turnDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.dispatchEvent(new CustomEvent('toggleDarkMode', {detail: !darkMode}))
+  }
+
 
   useEffect(() => {
     if (!showMenu) return;
@@ -39,6 +46,9 @@ function ProfileButton({ user }) {
           <ul className="profile-dropdown">
             <li>Username: {user.username}</li>
             <li>Email: {user.email}</li>
+            <li>
+              <button onClick={turnDarkMode}>Dark Mode</button>
+            </li>
             <li>
               <button onClick={logout}>Log Out</button>
             </li>
