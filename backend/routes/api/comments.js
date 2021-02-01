@@ -4,7 +4,6 @@ const {ArticleComments} = require('../../db/models');
 const asyncHandler = require('express-async-handler');
 const {requireAuth} = require('../../utils/auth');
 
-
 router.get('/', asyncHandler(async (req, res)=>{
     const comments = await ArticleComments.findAll();
     return res.json({comments});
