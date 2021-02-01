@@ -22,9 +22,6 @@ function WriteComments(){
 
         await dispatch(writeComment(payload));
         setContent('');
-        // if (submitComment) {
-        //     history.push('/');
-        // }
     };
 
     return (

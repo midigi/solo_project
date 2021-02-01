@@ -1,4 +1,3 @@
-import {useDispatch, useSelector} from 'react-redux';
 import {fetch} from '../store/csrf';
 
 const SET_COMMENTS = 'COMMENTS/setComments';
@@ -22,9 +21,6 @@ export const getAllComments = (article_id) => async (dispatch) => {
 export const writeComment = (payload) => async (dispatch) => {
     const res = await fetch("/api/comments", {
         method: 'POST',
-        // headers: {
-        //   'Content-Type': 'application/json',
-    // },
         body: JSON.stringify(payload)
     })
     if (res.ok){

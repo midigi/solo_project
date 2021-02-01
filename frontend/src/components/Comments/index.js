@@ -7,7 +7,6 @@ function Comments(){
     const dispatch = useDispatch()
     const article_id = Number.parseInt(useParams().article_id);
     const comments = useSelector((state) => Object.values(state.comments));
-    // console.log('comments', comments)
 
     useEffect(()=> {
         dispatch(getAllComments(article_id))

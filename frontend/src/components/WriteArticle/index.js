@@ -13,16 +13,6 @@ const WriteArticle = () => {
     const [blurb, setBlurb] = useState('');
     const [content, setContent] = useState('');
 
-    // const handleTitle = (e) => {
-    //     setTitle(e.target.value);
-    // }
-    // const handleBlurb = (e) => {
-    //     setBlurb(e.target.value);
-    // }
-    // const handleContent = (e) => {
-    //     setText(e.target.value);
-    // }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {

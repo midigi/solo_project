@@ -1,7 +1,5 @@
 import './HomePage.css';
 import {useEffect, useState, React} from 'react';
-import {fetchAllArticles} from '../../util/apiUtil';
-import {useDispatch, useSelector} from 'react-redux';
 import {fetch} from '../../store/csrf';
 import parser from 'react-html-parser';
 
@@ -15,8 +13,6 @@ function HomePage(){
         const {articles} = await res.data;
         setArticle(articles);
     }
-
-    const dispatch = useDispatch();
 
     useEffect( () => {
         getArticles()
@@ -46,7 +42,6 @@ function HomePage(){
 
     return (
         <div className='homepagebody'>
-            {/* {('dark mode is', darkMode ? 'on' : 'off')} */}
             {
                 article && article.length > 0 &&
                     <div className='main-article'>
